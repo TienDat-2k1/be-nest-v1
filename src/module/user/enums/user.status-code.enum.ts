@@ -1,0 +1,4 @@
+export enum ENUM_USER_STATUS_CODE_ERROR {
+  NOT_FOUND = 5150,
+  EMAIL_EXIST = 5152,
+}
