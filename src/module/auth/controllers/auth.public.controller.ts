@@ -43,18 +43,18 @@ export class AuthPublicController {
 
     const password = this.authService.createPassword(passwordNatural);
 
-    const session = await this.connection.startSession();
-    session.startTransaction();
+    // const session = await this.connection.startSession();
+    // session.startTransaction();
 
     try {
       await this.userService.signUp(
         { email, name, password: passwordNatural },
         { ...password },
-        { session },
+        // { session },
       );
     } catch (error: any) {
-      await session.abortTransaction();
-      await session.endSession();
+      // await session.abortTransaction();
+      // await session.endSession();
 
       throw new InternalServerErrorException({
         statusCode: ENUM_APP_STATUS_CODE_ERROR.UNKNOWN,
@@ -63,7 +63,6 @@ export class AuthPublicController {
         _error: error.message,
       });
     }
-
     return;
   }
 

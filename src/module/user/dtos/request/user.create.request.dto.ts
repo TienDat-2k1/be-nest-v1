@@ -1,6 +1,12 @@
 import { faker } from '@faker-js/faker';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEmail, IsNotEmpty, MaxLength } from 'class-validator';
+import {
+  IsEmail,
+  IsMongoId,
+  IsNotEmpty,
+  IsString,
+  MaxLength,
+} from 'class-validator';
 
 export class UserCreateRequestDto {
   @ApiProperty({
@@ -12,5 +18,11 @@ export class UserCreateRequestDto {
   @IsEmail()
   @MaxLength(100)
   email: string;
+
   name: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @IsMongoId()
+  roleId?: string;
 }

@@ -46,12 +46,12 @@ export class UserEntity extends DatabaseEntityBase {
   })
   email: string;
 
-  // @DatabaseProp({
-  //   required: true,
-  //   index: true,
-  //   trim: true,
-  // })
-  // role: string;
+  // // @DatabaseProp({
+  // //   required: true,
+  // //   index: true,
+  // //   trim: true,
+  // // })
+  // // role: string;
 
   @DatabaseProp({
     required: true,
