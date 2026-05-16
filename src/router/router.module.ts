@@ -4,6 +4,7 @@ import { RouterUserModule } from './routers/routers.user.module';
 import { RoutersAdminModule } from './routers/routers.admin.module';
 import { RouterPublicModule } from './routers/routers.public.module';
 import { RouterProduct } from './routers/routers.product.module';
+import { RouterCategoryModule } from './routers/routers.category.module';
 
 @Module({
   controllers: [],
@@ -13,10 +14,12 @@ import { RouterProduct } from './routers/routers.product.module';
     RoutersAdminModule,
     RouterPublicModule,
     RouterProduct,
+    RouterCategoryModule,
     NestRouterModule.register([
       { path: '/public', module: RouterPublicModule },
       { path: '/user', module: RouterUserModule },
-      { path: 'product', module: RouterProduct },
+      { path: '/product', module: RouterProduct },
+      { path: '/category', module: RouterCategoryModule },
       {
         path: '/admin',
         module: RoutersAdminModule,
